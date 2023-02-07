@@ -27,6 +27,7 @@ def battle():
         print("Monster rolled: " + str(heroroll))
         monstertotalstrength = monsterroll + monsterstrength
         print("Monsters total strength: " + str(monstertotalstrength))
+        
     return
 
 battle()
