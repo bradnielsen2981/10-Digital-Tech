@@ -51,8 +51,6 @@ def battle():
     print("==========================================")
     return
 
-battle()
-battle()
-battle()
-battle()
-battle()
+
+while True:
+    battle()
