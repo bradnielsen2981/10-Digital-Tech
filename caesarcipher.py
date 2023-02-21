@@ -32,8 +32,8 @@ def decrypt(message, shift):
             newmessage = newmessage + alphabet[newindex]
     return newmessage
 
-message = encrypt("you are awesome!", 4)
+message = encrypt("i am great!", 6)
 print(message)
-message = decrypt(message, 4)
+message = decrypt(message, 6)
 print(message)
 
