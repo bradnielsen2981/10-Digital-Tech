@@ -2,7 +2,6 @@ import random
 
 reddice = random.randint(1,6)
 greendice = random.randint(1,6)
-
 attempts = 5
 
 while (reddice != greendice) and (attempts > 0): #loop WHILE condition = true
@@ -15,5 +14,3 @@ if attempts == 0:
     print("You died! Game over man!")
 else:
     print('Yahtzee')
-
-
