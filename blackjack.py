@@ -15,10 +15,16 @@ def deal():
     cardpack.remove(card)
     return card
 
+def total(hand):
+    t = 0
+    for card in hand:
+        parts = card.split()
+        t = t + int(parts[0])
+    return t
+
 createcardpack()
 playershand = []
 computershand = []
-
 playershand.append(deal()) #players hand is a list
 playershand.append(deal())
 computershand.append(deal()) #computer get dealt a card
@@ -28,11 +34,10 @@ move = input("hit or sit")
 while move == "hit":
     playershand.append(deal())
     print("Player has been dealt " + str(playershand))
+    print(total(playershand))
     move = input("hit or sit")
 
 
 
-#repeat until sit or bust
 
-#calculate the sum of cards
 
