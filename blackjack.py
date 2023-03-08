@@ -16,23 +16,21 @@ def deal():
     return card
 
 createcardpack()
-for c in range(52):
-    card = deal()
-    print(card)
+playershand = []
+computershand = []
+
+playershand.append(deal()) #players hand is a list
+playershand.append(deal())
+computershand.append(deal()) #computer get dealt a card
+print("Player has been dealt " + str(playershand))
+print("Computer has been dealt " + str(computershand))
+move = input("hit or sit")
+while move == "hit":
+    playershand.append(deal())
+    print("Player has been dealt " + str(playershand))
+    move = input("hit or sit")
 
 
-
-
-
-
-
-#players hand is a list
-
-#computer get dealt a card
-
-#show the user their cards
-
-#user is asked to flip to sit
 
 #repeat until sit or bust
 
