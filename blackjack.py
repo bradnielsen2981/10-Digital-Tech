@@ -19,7 +19,10 @@ def total(hand):
     t = 0
     for card in hand:
         parts = card.split()
-        t = t + int(parts[0])
+        number = int(parts[0]) 
+        if number > 10:
+            number = 10
+        t = t + number
     return t
 
 createcardpack()
@@ -30,14 +33,30 @@ playershand.append(deal())
 computershand.append(deal()) #computer get dealt a card
 print("Player has been dealt " + str(playershand))
 print("Computer has been dealt " + str(computershand))
-move = input("hit or sit")
-while move == "hit":
-    playershand.append(deal())
-    print("Player has been dealt " + str(playershand))
-    print(total(playershand))
+
+bust = False
+while not bust:
+
     move = input("hit or sit")
+    if move == "hit":
+        playershand.append(deal())
+        print("Player's hand is: " + str(playershand))
+    elif move == "sit":
+        break
+    
+    if total(playershand) > 21:
+        bust = True
+        print("You busted! Computer wins")
 
+if not bust:
+    while total(computershand) < total(playershand):
+        computershand.append(deal())
+        print("Computers hand is " + str(computershand))
 
+if total(computershand) <= 21:
+    print("Computer wins!!")
+else:
+    print("Player wins!!")
 
 
 
