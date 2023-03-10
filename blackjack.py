@@ -31,15 +31,15 @@ def readhand(hand):
     for card in hand:
         components = card.split()
         symbol = components[0]
-        if symbol == 1:
+        if symbol == "1":
             symbol = "Ace"
-        elif symbol == 11:
+        elif symbol == "11":
             symbol = "Jack"
-        elif symbol == 12:
+        elif symbol == "12":
             symbol == "Queen"
-        elif symbol == 13:
+        elif symbol == "13":
             symbol == "King"
-        cardtext = cardtext + str(symbol) + " " + components[1] + " , "
+        cardtext = cardtext + symbol + " " + components[1] + " , "
     return cardtext
         
 createcardpack()
