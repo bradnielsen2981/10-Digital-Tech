@@ -23,7 +23,6 @@ def total(hand):
         if number > 10:
             number = 10
         t = t + number
-    print(t)
     return t
 
 def readhand(hand):
@@ -39,7 +38,7 @@ def readhand(hand):
             symbol == "Queen"
         elif symbol == "13":
             symbol == "King"
-        cardtext = cardtext + symbol + " " + components[1] + " , "
+        cardtext = cardtext + symbol + " " + components[1] + ", "
     return cardtext
         
 createcardpack()
