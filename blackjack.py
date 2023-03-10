@@ -39,7 +39,7 @@ def readhand(hand):
             symbol == "Queen"
         elif symbol == 13:
             symbol == "King"
-        cardtext = symbol + " of " + components[1]
+        cardtext = str(symbol) + components[1] + " , "
     return cardtext
         
 createcardpack()
@@ -48,13 +48,13 @@ computershand = []
 playershand.append(deal()) #players hand is a list
 playershand.append(deal())
 computershand.append(deal()) #computer get dealt a card
-print("Player has been dealt " + str(playershand))
-print("Computer has been dealt " + str(computershand))
+print("Player has been dealt " + readhand(playershand))
+print("Computer has been dealt " + readhand(computershand))
 
 bust = False
 while not bust:
 
-    move = input("hit or sit")
+    move = input("hit or sit: ")
     if move == "hit":
         playershand.append(deal())
         print("Player's hand is: " + readhand(playershand))
