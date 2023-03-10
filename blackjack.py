@@ -39,7 +39,7 @@ def readhand(hand):
             symbol == "Queen"
         elif symbol == 13:
             symbol == "King"
-        cardtext = str(symbol) + components[1] + " , "
+        cardtext = cardtext + str(symbol) + components[1] + " , "
     return cardtext
         
 createcardpack()
