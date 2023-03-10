@@ -23,8 +23,25 @@ def total(hand):
         if number > 10:
             number = 10
         t = t + number
+    print(t)
     return t
 
+def readhand(hand):
+    cardtext = ""
+    for card in hand:
+        components = card.split()
+        symbol = components[0]
+        if symbol == 1:
+            symbol = "Ace"
+        elif symbol == 11:
+            symbol = "Jack"
+        elif symbol == 12:
+            symbol == "Queen"
+        elif symbol == 13:
+            symbol == "King"
+        cardtext = symbol + " of " + components[1]
+    return cardtext
+        
 createcardpack()
 playershand = []
 computershand = []
@@ -40,7 +57,7 @@ while not bust:
     move = input("hit or sit")
     if move == "hit":
         playershand.append(deal())
-        print("Player's hand is: " + str(playershand))
+        print("Player's hand is: " + readhand(playershand))
     elif move == "sit":
         break
     
@@ -51,7 +68,7 @@ while not bust:
 if not bust:
     while total(computershand) < total(playershand):
         computershand.append(deal())
-        print("Computers hand is " + str(computershand))
+        print("Computers hand is " + readhand(computershand))
 
 if total(computershand) <= 21:
     print("Computer wins!!")
